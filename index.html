@@ -7,7 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --accent: #16a34a;
@@ -68,7 +72,7 @@
 
     header p {
       font-size: 1.1rem;
-      opacity: 0.85;
+      opacity: 0.9;
       max-width: 560px;
       margin: 0 auto;
     }
@@ -167,7 +171,9 @@
       margin-bottom: 12px;
     }
 
-    .card p:last-child { margin-bottom: 0; }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
 
     .definition-box {
       background: linear-gradient(135deg, #f0fdf4, #dcfce7);
@@ -262,8 +268,13 @@
       line-height: 1.5;
     }
 
-    table.sensors tr:last-child td { border-bottom: none; }
-    table.sensors tr:hover td { background: #f0fdf4; }
+    table.sensors tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.sensors tr:hover td {
+      background: #f0fdf4;
+    }
 
     .sensor-name {
       font-weight: 600;
@@ -311,6 +322,7 @@
 
     .section-img {
       width: 100%;
+      max-width: 100%;
       height: 220px;
       object-fit: cover;
       border-radius: var(--radius);
@@ -352,14 +364,13 @@
   </nav>
 
   <main>
-
     <section id="def">
       <div class="task-label">💡 Úvod</div>
       <h2>Čo je optoelektronika?</h2>
       <p class="sub">Definícia a základný popis odboru</p>
 
-      <img src="https://maker.pro/storage/g9KLewl/g9KLewltrLring5iSMGKm5SyNRKMvSB6GRsJpuH9.jpeg" alt="Optoelektronika – LED a laser technológia" class="section-img">
-      <p class="img-caption">Optoelektronické súčiastky – LED diódy a laserové moduly</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/LED.jpg/640px-LED.jpg" alt="LED diódy" class="section-img">
+      <p class="img-caption">LED diódy – základ optoelektroniky</p>
 
       <div class="definition-box">
         <strong>Optoelektronika</strong> je vedný a technický odbor, ktorý sa zaoberá zariadeniami a systémami, ktoré <em>premieňajú elektrický signál na svetlo</em> alebo naopak <em>svetlo na elektrický signál</em>. Spája princípy optiky a elektroniky.
@@ -388,7 +399,7 @@
       <h2>Optoelektronické technológie</h2>
       <p class="sub">Prehľad hlavných optoelektronických zariadení a technológií</p>
 
-      <img src="https://www.simitech.in/wp-content/uploads/2022/03/optical-fibre-cable.jpg" alt="Optické vlákno" class="section-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Fiber_optic_cable.jpg/640px-Fiber_optic_cable.jpg" alt="Optické vlákno" class="section-img">
       <p class="img-caption">Optické vlákno – základ moderných telekomunikácií</p>
 
       <div class="grid">
@@ -399,6 +410,7 @@
             <div class="desc">Light Emitting Diode – vyžaruje svetlo pri prechode elektrického prúdu, nízka spotreba energie</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🔴</div>
           <div>
@@ -406,6 +418,7 @@
             <div class="desc">Koherentné svetlo – používa sa v optických diskoch, medicíne, meraní vzdialenosti</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🌞</div>
           <div>
@@ -413,6 +426,7 @@
             <div class="desc">Premieňa slnečné svetlo na elektrickú energiu – základ solárnych panelov</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">📷</div>
           <div>
@@ -420,6 +434,7 @@
             <div class="desc">Obrazové senzory v digitálnych fotoaparátoch a kamerách</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🖥️</div>
           <div>
@@ -427,6 +442,7 @@
             <div class="desc">Organické LED – každý pixel svieti samostatne, hlboká čierna, nízka spotreba</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🔗</div>
           <div>
@@ -434,6 +450,7 @@
             <div class="desc">Prenos dát pomocou svetla na veľké vzdialenosti s minimálnymi stratami</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🔲</div>
           <div>
@@ -441,6 +458,7 @@
             <div class="desc">Galvanicky oddeľuje obvody pomocou svetla – ochrana pred rušením a prepätím</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">📡</div>
           <div>
@@ -456,7 +474,7 @@
       <h2>Optické senzory</h2>
       <p class="sub">Definícia, typy a princípy fungovania optických senzorov</p>
 
-      <img src="https://nyerekatech.com/wp-content/uploads/2023/01/LM393-Photodiode-module.jpg" alt="Fotodióda – optický senzor" class="section-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Photodiode.jpg/640px-Photodiode.jpg" alt="Fotodióda" class="section-img">
       <p class="img-caption">Fotodióda a fototranzistor – základné optické senzory</p>
 
       <div class="definition-box">
@@ -475,7 +493,7 @@
           <tbody>
             <tr>
               <td><span class="sensor-name">Fotodióda</span></td>
-              <td>Generuje prúd úmerný intenzite dopadajúceho svetla (fotoelektrický jav)</td>
+              <td>Generuje prúd úmerný intenzite dopadajúceho svetla</td>
               <td><span class="tag">Meranie svetla</span></td>
             </tr>
             <tr>
@@ -490,12 +508,12 @@
             </tr>
             <tr>
               <td><span class="sensor-name">Pyroelektrický IR senzor</span></td>
-              <td>Detekuje zmeny infračerveného žiarenia (tepla) pohybujúcich sa objektov</td>
+              <td>Detekuje zmeny infračerveného žiarenia pohybujúcich sa objektov</td>
               <td><span class="tag">PIR – detekcia pohybu</span></td>
             </tr>
             <tr>
               <td><span class="sensor-name">Laserový senzor vzdialenosti</span></td>
-              <td>Meria čas letu laserového pulzu od vysielača k cieľu a späť (ToF)</td>
+              <td>Meria čas letu laserového pulzu od vysielača k cieľu a späť</td>
               <td><span class="tag">Meranie vzdialenosti</span></td>
             </tr>
             <tr>
@@ -523,8 +541,8 @@
       <h2>Kde sa optické senzory používajú?</h2>
       <p class="sub">Praktické aplikácie optoelektroniky v bežnom živote a priemysle</p>
 
-      <img src="https://alltopnotch.co.uk/wp-content/uploads/2019/09/Mini-Infrared-PIR-HC-SR505-Motion-Sensor.jpg" alt="PIR pohybový senzor" class="section-img">
-      <p class="img-caption">PIR infračervený pohybový senzor – bežné využitie v bezpečnostných systémoch</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/PIR_motion_sensor.jpg/640px-PIR_motion_sensor.jpg" alt="PIR senzor" class="section-img">
+      <p class="img-caption">PIR infračervený pohybový senzor – využitie v bezpečnostných systémoch</p>
 
       <div class="grid">
         <div class="grid-card">
@@ -534,67 +552,73 @@
             <div class="desc">Automatické zapínanie svetiel pri zotmení alebo pohybe osôb</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🚗</div>
           <div>
             <div class="name">Automobily</div>
-            <div class="desc">Senzory parkovania, adaptívne osvetlenie, detekcia pruhu, LiDAR v autonómnych vozidlách</div>
+            <div class="desc">Senzory parkovania, adaptívne osvetlenie, detekcia pruhu, LiDAR</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🏥</div>
           <div>
             <div class="name">Medicína</div>
-            <div class="desc">Pulzný oximeter (meranie SpO2), endoskopy, laserová chirurgia, CT skenery</div>
+            <div class="desc">Pulzný oximeter, endoskopy, laserová chirurgia</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🏭</div>
           <div>
             <div class="name">Priemysel</div>
-            <div class="desc">Kontrola kvality výrobkov, počítanie kusov na linke, detekcia chýb</div>
+            <div class="desc">Kontrola kvality výrobkov, počítanie kusov, detekcia chýb</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">📱</div>
           <div>
             <div class="name">Mobilné zariadenia</div>
-            <div class="desc">Senzor priblíženia, snímač odtlačkov prstov, regulácia jasu displeja</div>
+            <div class="desc">Senzor priblíženia, regulácia jasu displeja, snímače</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🌾</div>
           <div>
             <div class="name">Poľnohospodárstvo</div>
-            <div class="desc">Meranie vlhkosti pôdy, sledovanie rastu rastlín pomocou spektrálnych senzorov</div>
+            <div class="desc">Meranie vlhkosti pôdy a sledovanie rastu rastlín</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🔒</div>
           <div>
             <div class="name">Bezpečnosť</div>
-            <div class="desc">PIR alarmy, optické závory, laserové perimeter systémy</div>
+            <div class="desc">PIR alarmy, optické závory, laserové systémy</div>
           </div>
         </div>
+
         <div class="grid-card">
           <div class="grid-icon">🌐</div>
           <div>
             <div class="name">Telekomunikácie</div>
-            <div class="desc">Prenos dát cez optické vlákna – základ internetu na veľké vzdialenosti</div>
+            <div class="desc">Prenos dát cez optické vlákna – základ internetu</div>
           </div>
         </div>
       </div>
 
       <div class="note-box">
         <span>⚡</span>
-        <div><strong>Zaujímavosť:</strong> Optické senzory sú základom technológie <em>LiDAR</em> (Light Detection and Ranging), ktorú využívajú autonómne automobily, drony aj smartfóny pre mapovanie prostredia v 3D.</div>
+        <div><strong>Zaujímavosť:</strong> Optické senzory sú základom technológie <em>LiDAR</em>, ktorú využívajú autonómne autá, drony aj smartfóny.</div>
       </div>
     </section>
-
   </main>
 
   <footer>
-    Optoelektronika a optické senzory &nbsp;·&nbsp; Timothy Horoba
+    Optoelektronika a optické senzory · Timothy Horoba
   </footer>
 
 </body>
