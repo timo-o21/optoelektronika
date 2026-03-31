@@ -1,595 +1,601 @@
 <!DOCTYPE html>
-
 <html lang="sk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optoelektronika – Optické senzory</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optoelektronika – Optické senzory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-:root {
-–accent: #16a34a;
-–accent2: #15803d;
-–bg: #f0fdf4;
-–card: #ffffff;
-–text: #111827;
-–muted: #6b7280;
-–border: #bbf7d0;
-–green-bg: #dcfce7;
-–radius: 14px;
-}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-font-family: ‘Space Grotesk’, sans-serif;
-background: var(–bg);
-color: var(–text);
-line-height: 1.7;
-font-size: 16px;
-}
+    :root {
+      --accent: #16a34a;
+      --accent2: #15803d;
+      --bg: #f0fdf4;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #bbf7d0;
+      --green-bg: #dcfce7;
+      --radius: 14px;
+    }
 
-header {
-background: linear-gradient(135deg, #052e16 0%, #16a34a 60%, #4ade80 100%);
-color: white;
-padding: 64px 24px 80px;
-text-align: center;
-position: relative;
-overflow: hidden;
-}
-header::before {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=‘none’ fill-rule=‘evenodd’%3E%3Cg fill=’%23ffffff’ fill-opacity=‘0.05’%3E%3Ccircle cx=‘30’ cy=‘30’ r=‘2’/%3E%3C/g%3E%3C/g%3E%3C/svg%3E”);
-pointer-events: none;
-}
-header .badge {
-display: inline-block;
-background: rgba(255,255,255,0.15);
-border: 1px solid rgba(255,255,255,0.3);
-border-radius: 99px;
-padding: 6px 18px;
-font-size: 13px;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-margin-bottom: 20px;
-}
-header h1 {
-font-family: ‘Syne’, sans-serif;
-font-size: clamp(2rem, 5vw, 3.5rem);
-font-weight: 800;
-letter-spacing: -0.02em;
-margin-bottom: 12px;
-}
-header p {
-font-size: 1.1rem;
-opacity: 0.85;
-max-width: 560px;
-margin: 0 auto;
-}
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-nav {
-background: white;
-border-bottom: 1px solid var(–border);
-padding: 0 24px;
-display: flex;
-gap: 4px;
-overflow-x: auto;
-justify-content: center;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-nav a {
-display: block;
-padding: 14px 18px;
-text-decoration: none;
-color: var(–muted);
-font-size: 14px;
-font-weight: 500;
-border-bottom: 3px solid transparent;
-white-space: nowrap;
-transition: all 0.2s;
-}
-nav a:hover { color: var(–accent); border-bottom-color: var(–accent); }
+    header {
+      background: linear-gradient(135deg, #052e16 0%, #16a34a 60%, #4ade80 100%);
+      color: white;
+      padding: 64px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-main {
-max-width: 860px;
-margin: 0 auto;
-padding: 48px 24px 80px;
-display: flex;
-flex-direction: column;
-gap: 48px;
-}
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
 
-.task-label {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-font-size: 12px;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(–accent);
-background: var(–green-bg);
-border: 1px solid #86efac;
-border-radius: 99px;
-padding: 5px 14px;
-margin-bottom: 12px;
-}
+    header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 99px;
+      padding: 6px 18px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-section h2 {
-font-family: ‘Syne’, sans-serif;
-font-size: 1.75rem;
-font-weight: 800;
-margin-bottom: 6px;
-color: #052e16;
-line-height: 1.2;
-}
-section .sub {
-font-size: 0.95rem;
-color: var(–muted);
-margin-bottom: 24px;
-border-bottom: 1px solid var(–border);
-padding-bottom: 16px;
-}
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
 
-.card {
-background: var(–card);
-border: 1px solid var(–border);
-border-radius: var(–radius);
-padding: 24px 28px;
-margin-bottom: 20px;
-}
-.card h3 {
-font-size: 1.05rem;
-font-weight: 600;
-margin-bottom: 10px;
-color: #052e16;
-}
-.card p {
-color: #374151;
-line-height: 1.75;
-margin-bottom: 12px;
-}
-.card p:last-child { margin-bottom: 0; }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 560px;
+      margin: 0 auto;
+    }
 
-.definition-box {
-background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-border-left: 4px solid var(–accent);
-border-radius: 0 var(–radius) var(–radius) 0;
-padding: 20px 24px;
-margin-bottom: 24px;
-font-size: 1.05rem;
-line-height: 1.7;
-color: #14532d;
-}
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
 
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-gap: 14px;
-margin-top: 16px;
-}
-.grid-card {
-background: white;
-border: 1px solid var(–border);
-border-radius: 12px;
-padding: 16px 18px;
-display: flex;
-gap: 12px;
-align-items: flex-start;
-transition: box-shadow 0.2s, transform 0.2s;
-}
-.grid-card:hover {
-box-shadow: 0 6px 20px rgba(22,163,74,0.12);
-transform: translateY(-2px);
-}
-.grid-icon {
-width: 38px;
-height: 38px;
-border-radius: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 18px;
-flex-shrink: 0;
-background: var(–green-bg);
-}
-.grid-card .name {
-font-weight: 600;
-font-size: 0.92rem;
-color: #111;
-margin-bottom: 3px;
-}
-.grid-card .desc {
-font-size: 0.82rem;
-color: var(–muted);
-line-height: 1.4;
-}
+    nav a {
+      display: block;
+      padding: 14px 18px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
 
-/* Sensor table */
-.sensor-table-wrap {
-background: white;
-border: 1px solid var(–border);
-border-radius: var(–radius);
-overflow: hidden;
-margin-top: 20px;
-}
-table.sensors {
-width: 100%;
-border-collapse: collapse;
-font-size: 0.88rem;
-}
-table.sensors th {
-background: #f0fdf4;
-font-weight: 600;
-padding: 10px 16px;
-border-bottom: 1px solid var(–border);
-color: #14532d;
-font-size: 0.82rem;
-text-transform: uppercase;
-letter-spacing: 0.05em;
-text-align: left;
-}
-table.sensors td {
-padding: 10px 16px;
-border-bottom: 1px solid #f0fdf4;
-vertical-align: middle;
-color: #374151;
-line-height: 1.5;
-}
-table.sensors tr:last-child td { border-bottom: none; }
-table.sensors tr:hover td { background: #f0fdf4; }
-.sensor-name {
-font-weight: 600;
-color: #052e16;
-}
-.tag {
-display: inline-block;
-font-size: 11px;
-font-weight: 600;
-padding: 3px 10px;
-border-radius: 99px;
-background: #dcfce7;
-color: #14532d;
-border: 1px solid #86efac;
-white-space: nowrap;
-}
+    nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
 
-.note-box {
-background: #fefce8;
-border: 1px solid #fde68a;
-border-radius: 10px;
-padding: 14px 18px;
-font-size: 0.88rem;
-color: #78350f;
-margin-top: 20px;
-display: flex;
-gap: 10px;
-align-items: flex-start;
-line-height: 1.6;
-}
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
 
-.two-col {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 16px;
-margin-top: 16px;
-}
-@media (max-width: 600px) {
-.two-col { grid-template-columns: 1fr; }
-}
+    .task-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--green-bg);
+      border: 1px solid #86efac;
+      border-radius: 99px;
+      padding: 5px 14px;
+      margin-bottom: 12px;
+    }
 
-.section-img {
-width: 100%;
-height: 220px;
-object-fit: cover;
-border-radius: var(–radius);
-border: 1px solid var(–border);
-margin-bottom: 20px;
-display: block;
-}
-.img-caption {
-font-size: 12px;
-color: var(–muted);
-text-align: center;
-margin-top: -14px;
-margin-bottom: 18px;
-}
+    section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #052e16;
+      line-height: 1.2;
+    }
 
-footer {
-text-align: center;
-padding: 32px 24px;
-font-size: 0.85rem;
-color: var(–muted);
-border-top: 1px solid var(–border);
-}
-</style>
+    section .sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
 
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #052e16;
+    }
+
+    .card p {
+      color: #374151;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .definition-box {
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #14532d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .grid-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .grid-card:hover {
+      box-shadow: 0 6px 20px rgba(22,163,74,0.12);
+      transform: translateY(-2px);
+    }
+
+    .grid-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      background: var(--green-bg);
+    }
+
+    .grid-card .name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #111;
+      margin-bottom: 3px;
+    }
+
+    .grid-card .desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .sensor-table-wrap {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    table.sensors {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    table.sensors th {
+      background: #f0fdf4;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: #14532d;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: left;
+    }
+
+    table.sensors td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #f0fdf4;
+      vertical-align: middle;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    table.sensors tr:last-child td { border-bottom: none; }
+    table.sensors tr:hover td { background: #f0fdf4; }
+
+    .sensor-name {
+      font-weight: 600;
+      color: #052e16;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: #dcfce7;
+      color: #14532d;
+      border: 1px solid #86efac;
+      white-space: nowrap;
+    }
+
+    .note-box {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: #78350f;
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.6;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .img-caption {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: -14px;
+      margin-bottom: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="badge">🔬 Optoelektronika</div>
-  <h1>Optické senzory & Optoelektronika</h1>
-  <p>Školský projekt – optoelektronika, optoelektronické technológie a optické senzory</p>
-</header>
+  <header>
+    <div class="badge">🔬 Optoelektronika</div>
+    <h1>Optické senzory &amp; Optoelektronika</h1>
+    <p>Školský projekt – optoelektronika, optoelektronické technológie a optické senzory</p>
+  </header>
 
-<nav>
-  <a href="#def">Definícia</a>
-  <a href="#technologie">Technológie</a>
-  <a href="#senzory">Optické senzory</a>
-  <a href="#pouzitie">Použitie</a>
-</nav>
+  <nav>
+    <a href="#def">Definícia</a>
+    <a href="#technologie">Technológie</a>
+    <a href="#senzory">Optické senzory</a>
+    <a href="#pouzitie">Použitie</a>
+  </nav>
 
-<main>
+  <main>
 
-  <!-- Definícia -->
+    <section id="def">
+      <div class="task-label">💡 Úvod</div>
+      <h2>Čo je optoelektronika?</h2>
+      <p class="sub">Definícia a základný popis odboru</p>
 
-  <section id="def">
-    <div class="task-label">💡 Úvod</div>
-    <h2>Čo je optoelektronika?</h2>
-    <p class="sub">Definícia a základný popis odboru</p>
+      <img src="https://maker.pro/storage/g9KLewl/g9KLewltrLring5iSMGKm5SyNRKMvSB6GRsJpuH9.jpeg" alt="Optoelektronika – LED a laser technológia" class="section-img">
+      <p class="img-caption">Optoelektronické súčiastky – LED diódy a laserové moduly</p>
 
-```
-<img src="https://maker.pro/storage/g9KLewl/g9KLewltrLring5iSMGKm5SyNRKMvSB6GRsJpuH9.jpeg" alt="Optoelektronika – LED a laser technológia" class="section-img">
-<p class="img-caption">Optoelektronické súčiastky – LED diódy a laserové moduly</p>
+      <div class="definition-box">
+        <strong>Optoelektronika</strong> je vedný a technický odbor, ktorý sa zaoberá zariadeniami a systémami, ktoré <em>premieňajú elektrický signál na svetlo</em> alebo naopak <em>svetlo na elektrický signál</em>. Spája princípy optiky a elektroniky.
+      </div>
 
-<div class="definition-box">
-  <strong>Optoelektronika</strong> je vedný a technický odbor, ktorý sa zaoberá zariadeniami a systémami, ktoré <em>premieňajú elektrický signál na svetlo</em> alebo naopak <em>svetlo na elektrický signál</em>. Spája princípy optiky a elektroniky.
-</div>
+      <div class="card">
+        <h3>Základné princípy</h3>
+        <p>Optoelektronika využíva vlastnosti svetla (fotónov) na prenos, spracovanie a detekciu informácií. Základom je <strong>fotoelektrický jav</strong> – keď fotóny dopadajú na materiál, môžu uvoľniť elektróny a vytvoriť elektrický prúd.</p>
+        <p>Optoelektronické súčiastky pracujú s viditeľným svetlom, infračerveným (IR) alebo ultrafialovým (UV) žiarením.</p>
+      </div>
 
-<div class="card">
-  <h3>Základné princípy</h3>
-  <p>Optoelektronika využíva vlastnosti svetla (fotónov) na prenos, spracovanie a detekciu informácií. Základom je <strong>fotoelektrický jav</strong> – keď fotóny dopadajú na materiál, môžu uvoľniť elektróny a vytvoriť elektrický prúd.</p>
-  <p>Optoelektronické súčiastky pracujú s viditeľným svetlom, infračerveným (IR) alebo ultrafialovým (UV) žiarením.</p>
-</div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h3>⚡ Elektro → Svetlo</h3>
+          <p>Zariadenia, ktoré premieňajú elektrický signál na svetelný: LED diódy, lasery, OLED displeje, žiarovky.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h3>☀️ Svetlo → Elektro</h3>
+          <p>Zariadenia, ktoré premieňajú svetlo na elektrický signál: fotodiódy, solárne články, CCD snímače, fototranzistory.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="two-col">
-  <div class="card" style="margin-bottom:0;">
-    <h3>⚡ Elektro → Svetlo</h3>
-    <p>Zariadenia, ktoré premieňajú elektrický signál na svetelný: LED diódy, lasery, OLED displeje, žiarovky.</p>
-  </div>
-  <div class="card" style="margin-bottom:0;">
-    <h3>☀️ Svetlo → Elektro</h3>
-    <p>Zariadenia, ktoré premieňajú svetlo na elektrický signál: fotodiódy, solárne články, CCD snímače, fototranzistory.</p>
-  </div>
-</div>
-```
+    <section id="technologie">
+      <div class="task-label">🔧 Technológie</div>
+      <h2>Optoelektronické technológie</h2>
+      <p class="sub">Prehľad hlavných optoelektronických zariadení a technológií</p>
 
-  </section>
+      <img src="https://www.simitech.in/wp-content/uploads/2022/03/optical-fibre-cable.jpg" alt="Optické vlákno" class="section-img">
+      <p class="img-caption">Optické vlákno – základ moderných telekomunikácií</p>
 
-  <!-- Technológie -->
+      <div class="grid">
+        <div class="grid-card">
+          <div class="grid-icon">💡</div>
+          <div>
+            <div class="name">LED dióda</div>
+            <div class="desc">Light Emitting Diode – vyžaruje svetlo pri prechode elektrického prúdu, nízka spotreba energie</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🔴</div>
+          <div>
+            <div class="name">Laser</div>
+            <div class="desc">Koherentné svetlo – používa sa v optických diskoch, medicíne, meraní vzdialenosti</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🌞</div>
+          <div>
+            <div class="name">Fotovoltaický článok</div>
+            <div class="desc">Premieňa slnečné svetlo na elektrickú energiu – základ solárnych panelov</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">📷</div>
+          <div>
+            <div class="name">CCD / CMOS snímač</div>
+            <div class="desc">Obrazové senzory v digitálnych fotoaparátoch a kamerách</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🖥️</div>
+          <div>
+            <div class="name">OLED displej</div>
+            <div class="desc">Organické LED – každý pixel svieti samostatne, hlboká čierna, nízka spotreba</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🔗</div>
+          <div>
+            <div class="name">Optické vlákno</div>
+            <div class="desc">Prenos dát pomocou svetla na veľké vzdialenosti s minimálnymi stratami</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🔲</div>
+          <div>
+            <div class="name">Optočlen</div>
+            <div class="desc">Galvanicky oddeľuje obvody pomocou svetla – ochrana pred rušením a prepätím</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">📡</div>
+          <div>
+            <div class="name">IR dióda / prijímač</div>
+            <div class="desc">Infračervená komunikácia – diaľkové ovládače, bezkontaktný prenos dát</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="technologie">
-    <div class="task-label">🔧 Technológie</div>
-    <h2>Optoelektronické technológie</h2>
-    <p class="sub">Prehľad hlavných optoelektronických zariadení a technológií</p>
+    <section id="senzory">
+      <div class="task-label">🔍 Senzory</div>
+      <h2>Optické senzory</h2>
+      <p class="sub">Definícia, typy a princípy fungovania optických senzorov</p>
 
-```
-<img src="https://www.simitech.in/wp-content/uploads/2022/03/optical-fibre-cable.jpg" alt="Optické vlákno" class="section-img">
-<p class="img-caption">Optické vlákno – základ moderných telekomunikácií</p>
+      <img src="https://nyerekatech.com/wp-content/uploads/2023/01/LM393-Photodiode-module.jpg" alt="Fotodióda – optický senzor" class="section-img">
+      <p class="img-caption">Fotodióda a fototranzistor – základné optické senzory</p>
 
-<div class="grid">
-  <div class="grid-card">
-    <div class="grid-icon">💡</div>
-    <div>
-      <div class="name">LED dióda</div>
-      <div class="desc">Light Emitting Diode – vyžaruje svetlo pri prechode elektrického prúdu, nízka spotreba energie</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🔴</div>
-    <div>
-      <div class="name">Laser</div>
-      <div class="desc">Koherentné svetlo – používa sa v optických diskoch, medicíne, meraní vzdialenosti</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <dv class="grid-icon">🌞</div>
-    <div>
-      <div class="name">Fotovoltaický článok</div>
-      <div class="desc">Premieňa slnečné svetlo na elektrickú energiu – základ solárnych panelov</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">📷</div>
-    <div>
-      <div class="name">CCD / CMOS snímač</div>
-      <div class="desc">Obrazové senzory v digitálnych fotoaparátoch a kamerách</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🖥️</div>
-    <div>
-      <div class="name">OLED displej</div>
-      <div class="desc">Organické LED – každý pixel svieti samostatne, hlboká čierna, nízka spotreba</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🔗</div>
-    <div>
-      <div class="name">Optické vlákno</div>
-      <div class="desc">Prenos dát pomocou svetla na veľké vzdialenosti s minimálnymi stratami</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🔲</div>
-    <div>
-      <div class="name">Optočlen</div>
-      <div class="desc">Galvanicky oddeľuje obvody pomocou svetla – ochrana pred rušením a prepätím</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">📡</div>
-    <div>
-      <div class="name">IR dióda / prijímač</div>
-      <div class="desc">Infračervená komunikácia – diaľkové ovládače, bezkontaktný prenos dát</div>
-    </div>
-  </div>
-</div>
-```
+      <div class="definition-box">
+        <strong>Optický senzor</strong> je elektronické zariadenie, ktoré detekuje svetlo alebo iné elektromagnetické žiarenie a premieňa ho na elektrický signál. Využívajú sa na meranie, detekciu pohybu, snímania vzdialenosti a mnohé ďalšie aplikácie.
+      </div>
 
-  </section>
+      <div class="sensor-table-wrap">
+        <table class="sensors">
+          <thead>
+            <tr>
+              <th>Typ senzora</th>
+              <th>Princíp fungovania</th>
+              <th>Použitie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="sensor-name">Fotodióda</span></td>
+              <td>Generuje prúd úmerný intenzite dopadajúceho svetla (fotoelektrický jav)</td>
+              <td><span class="tag">Meranie svetla</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Fototranzistor</span></td>
+              <td>Svetlo riadi bázu tranzistora – zosilnený výstupný prúd oproti fotodióde</td>
+              <td><span class="tag">Detekcia objektov</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">LDR (fotoodpor)</span></td>
+              <td>Odpor sa mení podľa intenzity svetla – tmavšie = väčší odpor</td>
+              <td><span class="tag">Automatické osvetlenie</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Pyroelektrický IR senzor</span></td>
+              <td>Detekuje zmeny infračerveného žiarenia (tepla) pohybujúcich sa objektov</td>
+              <td><span class="tag">PIR – detekcia pohybu</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Laserový senzor vzdialenosti</span></td>
+              <td>Meria čas letu laserového pulzu od vysielača k cieľu a späť (ToF)</td>
+              <td><span class="tag">Meranie vzdialenosti</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Optický enkodér</span></td>
+              <td>Prerušovanie svetelného lúča pri rotácii kotúča – počíta impulzy</td>
+              <td><span class="tag">Motory, robotika</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Vláknový optický senzor</span></td>
+              <td>Svetlo prechádza optickým vláknom – narušenie signalizuje zmenu prostredia</td>
+              <td><span class="tag">Priemysel, bezpečnosť</span></td>
+            </tr>
+            <tr>
+              <td><span class="sensor-name">Farebný senzor (RGB)</span></td>
+              <td>Analyzuje odrazené svetlo rôznych vlnových dĺžok pre určenie farby objektu</td>
+              <td><span class="tag">Triedenie, tlač</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <!-- Optické senzory -->
+    <section id="pouzitie">
+      <div class="task-label">🌍 Použitie</div>
+      <h2>Kde sa optické senzory používajú?</h2>
+      <p class="sub">Praktické aplikácie optoelektroniky v bežnom živote a priemysle</p>
 
-  <section id="senzory">
-    <div class="task-label">🔍 Senzory</div>
-    <h2>Optické senzory</h2>
-    <p class="sub">Definícia, typy a princípy fungovania optických senzorov</p>
+      <img src="https://alltopnotch.co.uk/wp-content/uploads/2019/09/Mini-Infrared-PIR-HC-SR505-Motion-Sensor.jpg" alt="PIR pohybový senzor" class="section-img">
+      <p class="img-caption">PIR infračervený pohybový senzor – bežné využitie v bezpečnostných systémoch</p>
 
-```
-<img src="https://nyerekatech.com/wp-content/uploads/2023/01/LM393-Photodiode-module.jpg" alt="Fotodióda – optický senzor" class="section-img">
-<p class="img-caption">Fotodióda a fototranzistor – základné optické senzory</p>
+      <div class="grid">
+        <div class="grid-card">
+          <div class="grid-icon">🏠</div>
+          <div>
+            <div class="name">Inteligentné osvetlenie</div>
+            <div class="desc">Automatické zapínanie svetiel pri zotmení alebo pohybe osôb</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🚗</div>
+          <div>
+            <div class="name">Automobily</div>
+            <div class="desc">Senzory parkovania, adaptívne osvetlenie, detekcia pruhu, LiDAR v autonómnych vozidlách</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🏥</div>
+          <div>
+            <div class="name">Medicína</div>
+            <div class="desc">Pulzný oximeter (meranie SpO2), endoskopy, laserová chirurgia, CT skenery</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🏭</div>
+          <div>
+            <div class="name">Priemysel</div>
+            <div class="desc">Kontrola kvality výrobkov, počítanie kusov na linke, detekcia chýb</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">📱</div>
+          <div>
+            <div class="name">Mobilné zariadenia</div>
+            <div class="desc">Senzor priblíženia, snímač odtlačkov prstov, regulácia jasu displeja</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🌾</div>
+          <div>
+            <div class="name">Poľnohospodárstvo</div>
+            <div class="desc">Meranie vlhkosti pôdy, sledovanie rastu rastlín pomocou spektrálnych senzorov</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🔒</div>
+          <div>
+            <div class="name">Bezpečnosť</div>
+            <div class="desc">PIR alarmy, optické závory, laserové perimeter systémy</div>
+          </div>
+        </div>
+        <div class="grid-card">
+          <div class="grid-icon">🌐</div>
+          <div>
+            <div class="name">Telekomunikácie</div>
+            <div class="desc">Prenos dát cez optické vlákna – základ internetu na veľké vzdialenosti</div>
+          </div>
+        </div>
+      </div>
 
-<div class="definition-box">
-  <strong>Optický senzor</strong> je elektronické zariadenie, ktoré detekuje svetlo alebo iné elektromagnetické žiarenie a premieňa ho na elektrický signál. Využívajú sa na meranie, detekciu pohybu, snímania vzdialenosti a mnohé ďalšie aplikácie.
-</div>
+      <div class="note-box">
+        <span>⚡</span>
+        <div><strong>Zaujímavosť:</strong> Optické senzory sú základom technológie <em>LiDAR</em> (Light Detection and Ranging), ktorú využívajú autonómne automobily, drony aj smartfóny pre mapovanie prostredia v 3D.</div>
+      </div>
+    </section>
 
-<div class="sensor-table-wrap">
-  <table class="sensors">
-    <thead>
-      <tr>
-        <th>Typ senzora</th>
-        <th>Princíp fungovania</th>
-        <th>Použitie</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="sensor-name">Fotodióda</span></td>
-        <td>Generuje prúd úmerný intenzite dopadajúceho svetla (fotoelektrický jav)</td>
-        <td><span class="tag">Meranie svetla</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Fototranzistor</span></td>
-        <td>Svetlo riadi bázu tranzistora – zosilnený výstupný prúd oproti fotodióde</td>
-        <td><span class="tag">Detekcia objektov</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">LDR (fotoodpor)</span></td>
-        <td>Odpor sa mení podľa intenzity svetla – tmavšie = väčší odpor</td>
-        <td><span class="tag">Automatické osvetlenie</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Pyroelektrický IR senzor</span></td>
-        <td>Detekuje zmeny infračerveného žiarenia (tepla) pohybujúcich sa objektov</td>
-        <td><span class="tag">PIR – detekcia pohybu</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Laserový senzor vzdialenosti</span></td>
-        <td>Meria čas letu laserového pulzu od vysielača k cieľu a späť (ToF)</td>
-        <td><span class="tag">Meranie vzdialenosti</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Optický enkodér</span></td>
-        <td>Prerušovanie svetelného lúča pri rotácii kotúča – počíta impulzy</td>
-        <td><span class="tag">Motory, robotika</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Vláknový optický senzor</span></td>
-        <td>Svetlo prechádza optickým vláknom – narušenie signalizuje zmenu prostredia</td>
-        <td><span class="tag">Priemysel, bezpečnosť</span></td>
-      </tr>
-      <tr>
-        <td><span class="sensor-name">Farebný senzor (RGB)</span></td>
-        <td>Analyzuje odrazené svetlo rôznych vlnových dĺžok pre určenie farby objektu</td>
-        <td><span class="tag">Triedenie, tlač</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-```
+  </main>
 
-  </section>
-
-  <!-- Použitie -->
-
-  <section id="pouzitie">
-    <div class="task-label">🌍 Použitie</div>
-    <h2>Kde sa optické senzory používajú?</h2>
-    <p class="sub">Praktické aplikácie optoelektroniky v bežnom živote a priemysle</p>
-
-```
-<img src="https://alltopnotch.co.uk/wp-content/uploads/2019/09/Mini-Infrared-PIR-HC-SR505-Motion-Sensor.jpg" alt="PIR pohybový senzor" class="section-img">
-<p class="img-caption">PIR infračervený pohybový senzor – bežné využitie v bezpečnostných systémoch</p>
-
-<div class="grid">
-  <div class="grid-card">
-    <div class="grid-icon">🏠</div>
-    <div>
-      <div class="name">Inteligentné osvetlenie</div>
-      <div class="desc">Automatické zapínanie svetiel pri zotmení alebo pohybe osôb</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🚗</div>
-    <div>
-      <div class="name">Automobily</div>
-      <div class="desc">Senzory parkovania, adaptívne osvetlenie, detekcia pruhu, LiDAR v autonómnych vozidlách</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🏥</div>
-    <div>
-      <div class="name">Medicína</div>
-      <div class="desc">Pulzný oximeter (meranie SpO2), endoskopy, laserová chirurgia, CT skenery</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🏭</div>
-    <div>
-      <div class="name">Priemysel</div>
-      <div class="desc">Kontrola kvality výrobkov, počítanie kusov na linke, detekcia chýb</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">📱</div>
-    <div>
-      <div class="name">Mobilné zariadenia</div>
-      <div class="desc">Senzor priblíženia, snímač odtlačkov prstov, regulácia jasu displeja</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🌾</div>
-    <div>
-      <div class="name">Poľnohospodárstvo</div>
-      <div class="desc">Meranie vlhkosti pôdy, sledovanie rastu rastlín pomocou spektrálnych senzorov</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🔒</div>
-    <div>
-      <div class="name">Bezpečnosť</div>
-      <div class="desc">PIR alarmy, optické závory, laserové perimeter systémy</div>
-    </div>
-  </div>
-  <div class="grid-card">
-    <div class="grid-icon">🌐</div>
-    <div>
-      <div class="name">Telekomunikácie</div>
-      <div class="desc">Prenos dát cez optické vlákna – základ internetu na veľké vzdialenosti</div>
-    </div>
-  </div>
-</div>
-
-<div class="note-box">
-  <span>⚡</span>
-  <div><strong>Zaujímavosť:</strong> Optické senzory sú základom technológie <em>LiDAR</em> (Light Detection and Ranging), ktorú využívajú autonómne automobily, drony aj smartfóny pre mapovanie prostredia v 3D.</div>
-</div>
-```
-
-  </section>
-
-</main>
-
-<footer>
-   Optoelektronika a optické senzory &nbsp;·&nbsp;Timothy Horoba
-</footer>
+  <footer>
+    Optoelektronika a optické senzory &nbsp;·&nbsp; Timothy Horoba
+  </footer>
 
 </body>
 </html>
